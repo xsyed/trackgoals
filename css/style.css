@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.bg-custom-1 {
+    background-color: #85144b;
+}
+
+.bg-custom-2 {
+    background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+}
+
+#navbar-list-4 {
+    justify-content: end;
+    padding: 0 20px 0 0;
+}
+
+#logo {
+    width: 50px;
+    height: 50px;
+}
+
+#profile_name {
+    color: white;
+    padding: 0 5px 0px 15px;
+}
+
+/* mainbox */
+
+#mainbox {
+    min-height: 650px;
+}
+
+/* habitbox */
+#habitbox {
+    min-height: 500px;
+    border: 0 solid #c3e6cb;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#addHabit {
+    position: fixed;
+    bottom: 6%;
+    right: 28%;
+}
+
+/* #addHabit button {
+    background-color: #46d58e;
+    color: #343a40;
+} */
+
+.habit {
+    display: flex;
+    justify-content: space-between;
+}
+
+#habitbuttons {
+    display: inherit;
+    flex-direction: row;
+    width: 100px;
+    justify-content: space-between;
+}
+
+#habitbuttons button {
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+    cursor: pointer;
+    font-weight: 700;
+    line-height: 1;
+    font-size: 2rem;
+}
+
+#habits {
+    display: none;
+}
+
+.skipbutton {
+    color: red;
+}
+
+.donebutton {
+    color: green;
+}
+
+
+
+/* sidebar */
+.calendar-container {
+    margin-top: 20px;
+}
+
+.lboard_section {
+    width: 250px;
+    height: 250px;
+    margin: 20px auto 0;
+    background: #343a40;
+    padding: 7px 20px;
+    position: relative;
+    border-radius: 5px;
+}
+
+.lboard_section .lboard_tabs ul {
+    display: flex;
+}
+
+.lboard_section .lboard_tabs ul li {
+    margin-right: 50px;
+    font-size: 14px !important;
+    font-weight: 600;
+    color: #d5b000;
+}
+
+.points {
+    font-size: 12px;
+}
+
+.lboard_wrap {
+    position: absolute;
+    top: 35px;
+    left: 20px;
+    background: #46d58e;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.lboard_wrap .lboard_item {
+    padding: 10px;
+}
+
+.lboard_wrap .lboard_mem {
+    display: flex;
+    align-items: center;
+    padding: 3px 0;
+    border-bottom: 1px solid #ffe773;
+}
+
+.lboard_wrap .lboard_mem:first-child {
+    padding-top: 0;
+}
+
+.lboard_wrap .lboard_mem:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.lboard_wrap .lboard_mem .img {
+    width: 35px;
+}
+
+.lboard_wrap .lboard_mem img {
+    display: block;
+    width: 100%;
+}
+
+.lboard_wrap .lboard_mem .name_bar {
+    margin: 0 10px;
+    width: calc(100% - 15px);
+}
+
+.lboard_wrap .lboard_mem .name_bar p {
+    color: #3a3d51;
+}
+
+.lboard_wrap .lboard_mem .name_bar p span {
+    margin-right: 5px;
+}
+
+.lboard_wrap .lboard_mem .points {
+    width: 100px;
+    color: #3a3d51;
+}
+
+.lboard_wrap .lboard_mem .name_bar .bar_wrap {
+    width: 100%;
+    height: 5px;
+    background: #d5b000;
+    margin-top: 5px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.lboard_wrap .lboard_mem .name_bar .bar_wrap .inner_bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 5px;
+    background: #fff;
+    border-radius: 5px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.name_bar p {
+    margin: 0;
+    padding: 8px;
+}
+
+
+
+
+/* footer  */
+
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 5px;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+
+/* skeleton loader */
+.timeline-item {
+    background: #fff;
+    border: 1 px solid;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    border-radius: 0.25 rem;
+    margin: 10px auto;
+}
+
+@keyframes placeHolderShimmer {
+    0% {
+        background-position: -468px 0
+    }
+
+    100% {
+        background-position: 468px 0
+    }
+}
+
+.animated-background {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background-size: 800px 104px;
+    height: 95px;
+    position: relative;
+}
