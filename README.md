@@ -1,2 +1,2 @@
 # trackgoals
-A habit tracker built by Php Laravel
+A habit tracker built in PHP
