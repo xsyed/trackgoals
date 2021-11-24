@@ -16,3 +16,99 @@
     font-size: 24px;
     font-weight: bold;
 }
+
+#leftSide, #rightSide {
+    width: 100% !important;
+}
+
+.habitbox {
+    min-height: 500px;
+    border: 0 solid #c3e6cb;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.habit {
+    display: flex;
+    justify-content: space-between;
+}
+.habitname {
+    width: 100%;
+}
+.habitbuttons {
+    display: inherit;
+    flex-direction: row;
+    width: 100px;
+    justify-content: space-between;
+}
+
+.habitbuttonsCompleted {
+    display: flex;
+    flex-direction: row;
+    width: 100px;
+    justify-content: end;
+}
+
+.habitbuttonsCompleted i{
+    font-weight: bolder;
+}
+
+.habitbuttons button, .habitbuttonsCompleted button{
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+    cursor: pointer;
+    font-weight: 700;
+    line-height: 1;
+    font-size: 2rem;
+}
+button {
+    cursor: pointer;
+}
+
+#habits {
+    display: none;
+}
+
+.skipbutton {
+    color: red;
+}
+
+.donebutton {
+    color: green;
+}
+
+
+/* skeleton loader */
+.timeline-item {
+    background: #fff;
+    border: 1px solid;
+    border-color: #e5e6e9 #dfe0e4 #d0d1d5;
+    border-radius: 0.25rem;
+    margin: 10px auto;
+}
+
+@keyframes placeHolderShimmer {
+    0% {
+        background-position: -468px 0
+    }
+
+    100% {
+        background-position: 468px 0
+    }
+}
+
+.animated-background {
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeHolderShimmer;
+    animation-timing-function: linear;
+    background: #f6f7f8;
+    background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+    background-size: 800px 104px;
+    height: 95px;
+    position: relative;
+}
