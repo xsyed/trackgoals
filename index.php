@@ -136,6 +136,14 @@ if(isset($_SESSION['id'])) {
 <script src="./template/js/sweetalert2.all.min.js"></script>
 <script>
 
+    const loginFailedToast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true
+    })
+
     // Get the whole form, not the individual input-fields
     const form = document.getElementById('registerForm');
 
@@ -189,13 +197,10 @@ if(isset($_SESSION['id'])) {
             })
 
         } else {
-            Swal.fire({
-                title: 'Oops!',
-                text: data,
-                icon: "error",
-                confirmButtonColor: '#157347',
+            loginFailedToast.fire({
+                icon: 'error',
+                title: data
             })
-            //Swal.fire('Oops!', data, 'error')
         }
 
     }
