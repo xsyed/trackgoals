@@ -138,7 +138,7 @@ $(function(){
 
         let userId = document.getElementById("userId").value;
         if(choosedDate == undefined){
-            choosedDate = document.getElementById("currDate").value;
+            choosedDate = document.getElementById("currDate").value; //serverdate
         }
 
         const response = await fetch('./controller/habits/getPendingHabits.php?userId=' + userId + '&onDate=' + choosedDate);
@@ -352,18 +352,21 @@ $(function(){
         var choosedDate = dt.toISOString().split('T')[0]
         var today = new Date().toISOString().split('T')[0]
 
-        getPendingHabits(choosedDate);
-        getCompletehabits(choosedDate);
-        getSkippedhabits(choosedDate);
         getScore();
+
+
         var jsServerDate = new Date(serverDate).toISOString().split('T')[0];
 
         if(jsServerDate === choosedDate){
             dateTxt.innerHTML = "Today";
+            getPendingHabits(serverDate);
         } else {
             let momtDateTxt = moment(choosedDate).fromNow();
             dateTxt.innerHTML = momtDateTxt;
+            getPendingHabits(choosedDate);
         }
+        getCompletehabits(choosedDate);
+        getSkippedhabits(choosedDate);
 
     }
 

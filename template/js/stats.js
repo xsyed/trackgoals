@@ -28,7 +28,7 @@ $(function(){
         const data = await response.json();
         scoreElem.innerHTML = data["Score"];
 
-        console.log(data);
+
     }
 
     async function getHabitDetails() {
@@ -70,30 +70,84 @@ $(function(){
 
     }
 
+    async function getHabitChartData() {
+
+        let userId = document.getElementById("userId").value;
+
+        const response = await fetch('./controller/habits/getBarChartData.php?habit_id=' + parseInt(urlHabitId));
+
+        const data = await response.json();
+
+        let pointer = 0;
+
+        let months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+        let count = [];
+
+        for(let i = 1;i<=12;i++){
+            if(parseInt(data[pointer]["month"]) == i){
+                count.push(parseInt(data[pointer]["count"]))
+                pointer++;
+            } else {
+                count.push(0);
+            }
+        }
+
+
+        let chartdata = {
+            labels: months,
+            datasets: [
+                {
+                    label: 'Completed',
+                    backgroundColor: [
+                        "#5969ff",
+                        "#ff407b",
+                        "#25d5f2",
+                        "#ffc750",
+                        "#2ec551",
+                        "#7040fa",
+                        "#ff004e",
+                        "#5969ff",
+                        "#ff407b",
+                        "#25d5f2",
+                        "#ffc750",
+                        "#2ec551"
+                    ],
+                    hoverBackgroundColor: '#CCCCCC',
+                    hoverBorderColor: '#666666',
+                    data: count
+                }
+            ]
+        };
+
+
+        let myChart = $("#myChart");
+
+        let barGraph = new Chart(myChart, {
+            type: 'bar',
+            data: chartdata,
+            options:{
+                scales:{
+                    y: {
+                        display: true,
+
+                        beginAtZero: true,
+                        steps: 10,
+                        stepValue: 5,
+                        max: 31
+
+                    }
+                }
+            }
+        });
+
+    }
+
     getScore();
+    getHabitChartData();
     getHabitDetails();
     getHabitCurrStreak();
     getHabitMaxStreak();
 
-
-
-    const config = {
-        type: 'bar',
-        data: data,
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        },
-    };
-
-    
-    const myChart = new Chart(
-        document.getElementById('myChart'),
-        config
-    );
 
 
 });

@@ -84,7 +84,7 @@ $currDate = "$year-$month-$date";
             </div>
             <div class="bg-light border rounded-3" id="rightSide">
                 <div class="w-100">
-                    <h3 class="px-2 py-2">Stats</h3>
+                    <h3 class="px-3 py-2 ">Stats</h3>
 
                 </div>
                 <div class="list-group">

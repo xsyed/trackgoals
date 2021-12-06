@@ -20,7 +20,9 @@
 #leftSide, #rightSide {
     width: 100% !important;
 }
-
+#rightSide{
+    height: fit-content;
+}
 .habitbox {
     min-height: 500px;
     border: 0 solid #c3e6cb;
