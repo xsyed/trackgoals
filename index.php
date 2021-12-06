@@ -14,16 +14,16 @@ if(isset($_SESSION['id'])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php include_once('./template/favicon.php');?>
     <title>TrackGoals | Habit tracker</title>
-    <link href="./template/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./template/css/bootstrap-icons.css">
-    <link rel="stylesheet" href="./template/css/style.css">
+    <link href="template/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="template/css/bootstrap-icons.css">
+    <link rel="stylesheet" href="template/css/style.css">
 </head>
 <body>
 <div class="container">
     <div class="row">
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
             <a href="index.php" id="logo" class="col-md-9 mb-2 mb-md-0 text-dark text-decoration-none">
-                <img src="./template/images/logo.png" alt="TrackGoals">
+                <img src="template/images/logo.png" alt="TrackGoals">
                 <span>TrackGoals</span>
             </a>
 
@@ -44,7 +44,7 @@ if(isset($_SESSION['id'])) {
             </div>
 
             <div class="container px-5">
-                <img src="./template/images/demo.gif" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
+                <img src="template/images/demo.gif" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="700" height="500" loading="lazy">
             </div>
 
         </div>
@@ -119,7 +119,7 @@ if(isset($_SESSION['id'])) {
 
             <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
 
-                <img src="./template/images/logo.png" alt="TrackGoals Logo" class="" width="50" height="50" />
+                <img src="template/images/logo.png" alt="TrackGoals Logo" class="" width="50" height="50" />
             </a>
 
             <ul class="nav col-md-4 justify-content-end">
@@ -132,8 +132,8 @@ if(isset($_SESSION['id'])) {
         </footer>
     </div>
 </div>
-<script src="./template/js/bootstrap.bundle.min.js"></script>
-<script src="./template/js/sweetalert2.all.min.js"></script>
+<script src="template/js/bootstrap.bundle.min.js"></script>
+<script src="template/js/sweetalert2.all.min.js"></script>
 <script>
 
     const loginFailedToast = Swal.mixin({

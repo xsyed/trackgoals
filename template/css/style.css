@@ -62,7 +62,7 @@
     cursor: pointer;
     font-weight: 700;
     line-height: 1;
-    font-size: 2rem;
+    font-size: 1.7rem;
 }
 button {
     cursor: pointer;
@@ -99,7 +99,12 @@ button {
         background-position: 468px 0
     }
 }
-
+.knox {
+    display: none !important;
+}
+.lumos {
+    display: inline-flex !important;
+}
 .animated-background {
     animation-duration: 1s;
     animation-fill-mode: forwards;
@@ -111,4 +116,47 @@ button {
     background-size: 800px 104px;
     height: 95px;
     position: relative;
+}
+
+.editBtn,.cancelBtn{
+    font-size: 25px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.editIcon, .deleteIcon{
+    display: none !important;
+    cursor: pointer !important;
+
+}
+.editIcon i, .deleteIcon i, .statIcon i,.habitbuttons{
+    cursor: pointer !important;
+}
+
+.habitname:hover .editIcon,.habitname:hover .deleteIcon{
+    display: inline-flex !important;
+}
+#extraBox{
+    display: flex;
+    margin-right: 0px;
+}
+
+#myChart{
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.streakIcons{
+    font-size: 25px;
+    line-height: 0;
+}
+
+.totalCheckin{
+    color: dodgerblue;
+}
+.currStreakIcon{
+    color: orange;
+}
+
+.bestStreakIcon {
+    color: green;
 }
