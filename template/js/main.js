@@ -5,7 +5,8 @@ $(function(){
     let dateTxt = document.getElementById("dateTxt");
     let serverDate = document.getElementById("currDate").value;
     let scoreElem = document.getElementById("score");
-    dateTxt.innerHTML = "Today";
+    $("#dateTxt").html('<i class="bi bi-hourglass-split"></i> Today');
+    //dateTxt.innerHTML = "Today";
 
     let habitloader = document.getElementById("habitloader");
     let habitloaderCompleted = document.getElementById("habitloaderCompleted");
@@ -361,11 +362,13 @@ $(function(){
         var jsServerDate = new Date(serverDate).toISOString().split('T')[0];
 
         if(jsServerDate === choosedDate){
-            dateTxt.innerHTML = "Today";
+            //dateTxt.innerHTML = "Today";
+            $("#dateTxt").html('<i class="bi bi-hourglass-split"></i> Today');
             getPendingHabits(serverDate);
         } else {
             let momtDateTxt = moment(choosedDate).fromNow();
-            dateTxt.innerHTML = momtDateTxt;
+            $("#dateTxt").html('<i class="bi bi-clock-history"></i> '+momtDateTxt);
+            //dateTxt.innerHTML = momtDateTxt;
             getPendingHabits(choosedDate);
         }
         getCompletehabits(choosedDate);
