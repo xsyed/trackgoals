@@ -40,7 +40,7 @@ $currDate = "$year-$month-$date";
             <div id="extraBox" class="col-12 col-md-1">
 
                 <div id="notifsBox">
-                    <i class="bi bi-bell"></i>
+                    <a href="./friends.php"><i class="bi bi-people-fill"></i></a>
                 </div>
 
                 <div id="scoreBox">

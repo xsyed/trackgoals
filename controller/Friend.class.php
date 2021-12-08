@@ -100,12 +100,12 @@ class Friend{
             $sql = "INSERT INTO `friend_request`(sender, receiver) VALUES(?,?)";
             $stmt = $this->db->prepare($sql);
             $stmt->execute([$my_id, $user_id]);
-            header('Location: user_profile.php?id='.$user_id);
-            exit;
+            return true;
         }
         catch (PDOException $e) {
             die($e->getMessage());
         }
+        return false;
     }
 
     // CANCEL FRIEND REQUEST

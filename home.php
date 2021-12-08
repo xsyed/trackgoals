@@ -43,7 +43,7 @@ $currDate = "$year-$month-$date";
             <div id="extraBox" class="col-12 col-md-1">
 
                 <div id="notifsBox">
-                    <a href="./friends.php"><i class="bi bi-bell"></i></a>
+                    <a href="./friends.php"><i class="bi bi-people-fill"></i></a>
                 </div>
 
                 <div id="scoreBox">
@@ -75,7 +75,7 @@ $currDate = "$year-$month-$date";
         <div class="d-grid gap-2" style="grid-template-columns: 3fr 1fr;">
             <div id="leftSide">
                 <div id="datediv">
-                    <h3 id="dateTxt">Today</h3>
+                    <h3 id="dateTxt"><i class="bi bi-hourglass-split"></i> Today</h3>
                     <br>
                 </div>
                 <div id="pending">
@@ -171,7 +171,7 @@ $currDate = "$year-$month-$date";
             <div class="bg-light border rounded-3" id="rightSide">
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-success w-100 mb-3" data-bs-toggle="modal" data-bs-target="#addHabit" >
-                    Add Habit
+                    <i class="bi bi-plus-circle"></i> Add Habit
                 </button>
 
                 <!-- Add Modal -->

@@ -1,10 +1,10 @@
 <?php
 session_start();
 
+
 if(!$_SESSION['id']){
     header('location:./index.php');
 }
-
 date_default_timezone_set('America/Toronto'); // EST
 
 $info = getdate();
@@ -13,6 +13,11 @@ $month = $info['mon'];
 $year = $info['year'];
 
 $currDate = "$year-$month-$date";
+
+
+
+
+
 ?>
 
 <!doctype html>
@@ -23,7 +28,7 @@ $currDate = "$year-$month-$date";
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <?php include_once('./template/favicon.php');?>
-    <title>Friends &centerdot; TrackGoals | Habit tracker</title>
+    <title>Search Friends &centerdot; TrackGoals | Habit tracker</title>
     <link href="template/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="template/css/bootstrap-icons.css">
     <link rel="stylesheet" href="template/css/style.css">
@@ -70,49 +75,20 @@ $currDate = "$year-$month-$date";
     <div class="container-fluid pt-3 pb-3">
         <div class="d-grid gap-2" style="grid-template-columns: 3fr 1fr;">
             <div id="leftSide">
+                <div id="datediv">
+                    <h3 id="dateTxt">Search results <span class="badge rounded-pill bg-success" id="searchResults">0</span></h3>
+                    <hr>
+                </div>
                 <div id="pending">
+                    <div class="row" id="newFriendsContent">
 
-                    <ul class="nav nav-tabs" id="myTab" role="tablist">
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link active" id="friends-tab" data-bs-toggle="tab" data-bs-target="#friendsBox" type="button" role="tab" aria-controls="Friends" aria-selected="true">Friends <span class="badge rounded-pill bg-success" id="friendsCount">0</span></button>
-                        </li>
-                        <li class="nav-item" role="presentation">
-                            <button class="nav-link" id="requests-tab" data-bs-toggle="tab" data-bs-target="#requestsBox" type="button" role="tab" aria-controls="Requests" aria-selected="false">Requests <span class="badge rounded-pill bg-primary" id="requestCount">0</span></button>
-                        </li>
-
-                    </ul>
-                    <div class="tab-content" id="myTabContent">
-                        <div class="tab-pane fade show active" id="friendsBox" role="tabpanel" aria-labelledby="friend-tab">
-                            <div class="row" id="friendsContent">
-
-
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="requestsBox" role="tabpanel" aria-labelledby="requests-tab">
-                            <div class="row" id="friendsRequests">
-
-                            </div>
-                        </div>
 
                     </div>
                 </div>
 
             </div>
 
-            <div class="bg-light border rounded-3 py-1" id="rightSide" style="height: 300px">
-                <div class="w-100">
-                    <h4 class="px-3 py-2 ">Search Friend</h4>
-                </div>
-                <form action="search.php" method="get" class="row gx-3 gy-2 align-items-center" validate>
-                    <div class="col-sm-9 py-2">
-                        <label class="visually-hidden" for="specificSizeInputName">Name</label>
-                        <input type="text" class="form-control" name="searchQuery" id="specificSizeInputName" placeholder="Search by Firstname" required>
-                    </div>
-                    <div class="col-auto py-2">
-                        <button type="submit" class="btn btn-success">Search</button>
-                    </div>
-                </form>
-            </div>
+
         </div>
     </div>
 
@@ -141,7 +117,7 @@ $currDate = "$year-$month-$date";
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="template/js/bootstrap.bundle.min.js"></script>
 <script src="template/js/sweetalert2.all.min.js"></script>
-<script src="template/js/friends.js"></script>
+<script src="template/js/search.js"></script>
 </body>
 </html>
 
