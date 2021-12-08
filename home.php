@@ -28,6 +28,7 @@ $currDate = "$year-$month-$date";
     <link rel="stylesheet" href="template/css/bootstrap-icons.css">
     <link rel="stylesheet" href="template/css/calendar.css">
     <link rel="stylesheet" href="template/css/calendartheme.css">
+
     <link rel="stylesheet" href="template/css/style.css">
 </head>
 <body>
@@ -42,7 +43,7 @@ $currDate = "$year-$month-$date";
             <div id="extraBox" class="col-12 col-md-1">
 
                 <div id="notifsBox">
-                    <i class="bi bi-bell"></i>
+                    <a href="./friends.php"><i class="bi bi-bell"></i></a>
                 </div>
 
                 <div id="scoreBox">
@@ -59,7 +60,7 @@ $currDate = "$year-$month-$date";
                     <span> <?php echo ucfirst($_SESSION['firstname']); ?></span>
                 </a>
                 <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-                    <li><a class="dropdown-item" href="#">Friends</a></li>
+                    <li><a class="dropdown-item" href="./friends.php">Friends</a></li>
                     <li><a class="dropdown-item" href="#">Settings</a></li>
                     <li><a class="dropdown-item" href="#">Profile</a></li>
                     <li><hr class="dropdown-divider"></li>

@@ -44,7 +44,7 @@ if(isset($_GET['userId'],$_GET['onDate']) && !empty($_GET['userId']) && !empty($
                 //echo "Seccues";
             } else{
                 header('Content-Type: application/json; charset=utf-8');
-                $data = ["Status"=>"Empty"];
+                $data = ["Status"=>"Empty","fordate"=>$currDate];
                 echo json_encode($data);
             }
         }
@@ -53,7 +53,7 @@ if(isset($_GET['userId'],$_GET['onDate']) && !empty($_GET['userId']) && !empty($
         }
     } else {
         header('Content-Type: application/json; charset=utf-8');
-        $data = ["Status"=>"Empty"];
+        $data = ["Status"=>"Empty","fordate"=>$currDate];
         echo json_encode($data);
     }
 

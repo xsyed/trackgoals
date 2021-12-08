@@ -70,53 +70,35 @@ $currDate = "$year-$month-$date";
     <div class="container-fluid pt-3 pb-3">
         <div class="d-grid gap-2" style="grid-template-columns: 3fr 1fr;">
             <div id="leftSide">
-                <div id="datediv">
-                    <h3 id="habitTxt">Loading...</h3>
-                    <br>
-                </div>
                 <div id="pending">
-                    <div>
-                        <canvas id="myChart"></canvas>
+
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="friends-tab" data-bs-toggle="tab" data-bs-target="#friendsBox" type="button" role="tab" aria-controls="Friends" aria-selected="true">Friends <span class="badge rounded-pill bg-success" id="friendsCount">0</span></button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link" id="requests-tab" data-bs-toggle="tab" data-bs-target="#requestsBox" type="button" role="tab" aria-controls="Requests" aria-selected="false">Requests <span class="badge rounded-pill bg-primary" id="requestCount">0</span></button>
+                        </li>
+
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="friendsBox" role="tabpanel" aria-labelledby="friend-tab">
+                            <div class="row" id="friendsContent">
+
+
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="requestsBox" role="tabpanel" aria-labelledby="requests-tab">
+                            <div class="row" id="friendsRequests">
+
+                            </div>
+                        </div>
+
                     </div>
-
                 </div>
 
             </div>
-            <div class="bg-light border rounded-3" id="rightSide">
-                <div class="w-100">
-                    <h3 class="px-3 py-2 ">Stats</h3>
 
-                </div>
-                <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action d-flex py-3" aria-current="true">
-                        <i class="bi bi-gem streakIcons rounded-circle flex-shrink-0 totalCheckin" ></i>
-                        <div class="d-flex w-100 justify-content-between">
-                            <h6 class="mb-0">Total Checkins</h6>
-                            <p class="mb-0 opacity-75" id="totalCheckin">0 days</p>
-                        </div>
-                    </a>
-
-                    <a href="#" class="list-group-item list-group-item-action d-flex  py-3" aria-current="true">
-                        <i class="bi bi-hourglass-split streakIcons currStreakIcon rounded-circle flex-shrink-0" ></i>
-                        <div class="d-flex w-100 justify-content-between">
-
-                                <h6 class="mb-0">Current Streak</h6>
-                                <p class="mb-0 opacity-75" id="currStreak">0 days</p>
-
-
-                        </div>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action d-flex  py-3" aria-current="true">
-                        <i class="bi bi-check-circle-fill  streakIcons bestStreakIcon rounded-circle flex-shrink-0"></i>
-                        <div class="d-flex w-100 justify-content-between">
-
-                            <h6 class="mb-0">Best Streak</h6>
-                            <p class="mb-0 opacity-75" id="bestStreak">0 days</p>
-
-                        </div>
-                    </a>
-                </div>
-            </div>
         </div>
     </div>
 
@@ -145,8 +127,7 @@ $currDate = "$year-$month-$date";
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <script src="template/js/bootstrap.bundle.min.js"></script>
 <script src="template/js/sweetalert2.all.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="template/js/stats.js"></script>
+<script src="template/js/friends.js"></script>
 </body>
 </html>
 
