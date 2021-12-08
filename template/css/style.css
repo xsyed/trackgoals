@@ -162,3 +162,21 @@ button {
 .bestStreakIcon {
     color: green;
 }
+
+#myTab li {
+    margin: 0 10px !important;
+}
+
+#friendsContent{
+    padding: 15px 0;
+}
+#singleFriend {
+    margin: 10px 0px;
+}
+
+.friendImageCard {
+    margin: 10px auto;
+}
+.frndActionBtns {
+    margin: 5px 10px;
+}

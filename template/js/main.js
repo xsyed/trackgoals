@@ -177,7 +177,10 @@ $(function(){
                 skipBtn.className = "skipbutton";
                 skipBtn.innerHTML = '<i class="bi bi-flag"></i>';
 
-                skipBtn.onclick = function() { changeHabitStatus(data[i].habit_id,2);}
+                skipBtn.onclick = function() {
+
+                    changeHabitStatus(data[i].habit_id,2);
+                }
 
                 hbtdiv.appendChild(skipBtn);
 
