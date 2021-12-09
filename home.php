@@ -56,12 +56,11 @@ $currDate = "$year-$month-$date";
 
             <div class="dropdown text-end col-md-1">
                 <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="./template/images/<?php echo ucfirst($_SESSION['photo']); ?>" alt="<?php echo ucfirst($_SESSION['firstname']); ?>" width="32" height="32" class="rounded-circle">
+                    <img src="./template/images/default.png" id="profilePic" alt="<?php echo ucfirst($_SESSION['firstname']); ?>" width="32" height="32" class="rounded-circle">
                     <span> <?php echo ucfirst($_SESSION['firstname']); ?></span>
                 </a>
                 <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-                    <li><a class="dropdown-item" href="./friends.php">Friends</a></li>
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="./settings.php">Settings</a></li>
                     <li><a class="dropdown-item" href="#">Profile</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="logout.php?logout=true">Log out</a></li>

@@ -18,10 +18,14 @@ if(isset($_POST['habit_id'],$_POST['habit_name']) && !empty($_POST['habit_id']) 
             ':hbname'=>$habit_name,
             ':updated_on'=>$date
         ];
+        if ( $handle->execute($params)) {
+            echo "Success";
+        } else {
+            echo "Not";
+        }
 
-        $handle->execute($params);
 
-        echo "Success";
+
     }
     catch(PDOException $e){
         echo $e->getMessage();

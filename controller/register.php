@@ -22,7 +22,7 @@ require_once('../config.php');
 
             if($stmt->rowCount() == 0)
             {
-                $sql = "insert into users (firstname, email, `password`, created_at,updated_on) values(:fname,:email,:pass,:created_at,:updated_at)";
+                $sql = "insert into users (firstname, email, `password`, created_at,updated_on,`photo`) values(:fname,:email,:pass,:created_at,:updated_at,'default.png')";
 
                 try{
                     $handle = $pdo->prepare($sql);
