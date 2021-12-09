@@ -54,37 +54,29 @@ $(function(){
         const response = await fetch('./controller/friends/getAllFriends.php?userId=' + userId);
 
         const data = await response.json();
-            /*<div class="col-sm-6 text-center" id="singleFriend">
-                                    <div class="card">
-                                        <img src="./template/images/default.png" width="100" height="100" alt="..." class="friendImageCard">
-                                        <div class="card-body">
-                                            <h5 class="card-title">Sam</h5>
-                                            <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                            <a href="#" class="btn btn-primary"><i class="bi bi-person-badge"></i> Profile</a>
-                                            <a href="#" class="btn btn-danger"><i class="bi bi-person-dash"></i> Unfriend</a>
-                                        </div>
-                                    </div>
-                                </div>*/
 
         $("#friendsContent").html("");
 
         $("#friendsCount").html(data.length);
 
-        for(let i=0;i<data.length;i++){
-            let str = '<div class="col-sm-6 text-center" id="singleFriend"><div class="card">';
-            str += '<img src="./template/images/'+data[i].photo+'" width="100" height="100" alt="Profile Image" class="friendImageCard" />';
-            str += '<div class="card-body"><h5 class="card-title">'+data[i].firstname+'</h5> <a href="./user/'+data[i].id+'" class="btn btn-primary frndActionBtns"><i class="bi bi-person-badge"></i> Profile</a>';
-            str += '<a href="#" class="btn btn-danger frndActionBtns" data-frnusid="'+data[i].id+'"><i class="bi bi-person-dash"></i> Unfriend</a></div></div></div>';
+        if(data.length > 0){
+            for(let i=0;i<data.length;i++){
+                let str = '<div class="col-sm-6 text-center" id="singleFriend"><div class="card">';
+                str += '<img src="./template/profileimages/'+data[i].photo+'" style="border-radius: 50%;" width="100" height="100" alt="Profile Image" class="friendImageCard" />';
+                str += '<div class="card-body"><h5 class="card-title">'+data[i].firstname+'</h5> <a href="./user/'+data[i].id+'" class="btn btn-primary frndActionBtns"><i class="bi bi-person-badge"></i> Profile</a>';
+                str += '<a href="#" class="btn btn-danger frndActionBtns" data-frnusid="'+data[i].id+'"><i class="bi bi-person-dash"></i> Unfriend</a></div></div></div>';
 
-            $("#friendsContent").append(str);
+                $("#friendsContent").append(str);
+            }
+        } else {
+            $("#friendsContent").html("<h3 class='text-center my-lg-5'>You have no friends!</h3>");
         }
 
-        console.log(data);
     }
 
     getAllFriends();
     getScore();
-
+    getAllFriendRequests();
 
     $("#friends-tab").click(function(){
         getAllFriends();
@@ -123,30 +115,25 @@ $(function(){
         const response = await fetch('./controller/friends/getAllFriendRequests.php?userId=' + userId);
 
         const data = await response.json();
-        /*<div class="col-sm-6 text-center" id="singleFriend">
-                                <div class="card">
-                                    <img src="./template/images/default.png" width="100" height="100" alt="..." class="friendImageCard">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Sam</h5>
-                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                        <a href="#" class="btn btn-primary"><i class="bi bi-person-badge"></i> Profile</a>
-                                        <a href="#" class="btn btn-danger"><i class="bi bi-person-dash"></i> Unfriend</a>
-                                    </div>
-                                </div>
-                            </div>*/
+
 
         $("#friendsRequests").html("");
 
         $("#requestCount").html(data.length);
 
-        for(let i=0;i<data.length;i++){
-            let str = '<div class="col-sm-6 text-center" id="singleFriend"><div class="card">';
-            str += '<img src="./template/images/'+data[i].photo+'" width="100" height="100" alt="Profile Image" class="friendImageCard" />';
-            str += '<div class="card-body"><h5 class="card-title">'+data[i].firstname+'</h5> <a href="#" class="btn btn-primary acceptFriendRequest" data-frnusid="'+data[i].sender+'"><i class="bi bi-person-badge"></i> Accept</a>';
-            str += '<a href="#" class="btn btn-danger cancelFriendRequest" data-frnusid="'+data[i].sender+'"><i class="bi bi-person-dash"></i> Ignore</a></div></div></div>';
+        if(data.length>0){
+            for(let i=0;i<data.length;i++){
+                let str = '<div class="col-sm-6 text-center" id="singleFriend"><div class="card">';
+                str += '<img src="./template/profileimages/'+data[i].photo+'" style="border-radius: 50%;" width="100" height="100" alt="Profile Image" class="friendImageCard" />';
+                str += '<div class="card-body"><h5 class="card-title">'+data[i].firstname+'</h5> <a href="#" class="btn btn-primary acceptFriendRequest frndaction" data-frnusid="'+data[i].sender+'"><i class="bi bi-person-badge"></i> Accept</a>';
+                str += '<a href="#" class="btn btn-danger cancelFriendRequest frndaction" data-frnusid="'+data[i].sender+'"><i class="bi bi-person-dash"></i> Ignore</a></div></div></div>';
 
-            $("#friendsRequests").append(str);
+                $("#friendsRequests").append(str);
+            }
+        } else {
+            $("#friendsRequests").html("<h3 class='text-center my-lg-5'>You have no friend requests!</h3>");
         }
+
 
         console.log(data);
     }
@@ -164,8 +151,9 @@ $(function(){
                 icon: 'success',
                 title: 'You have ignored!'
             }).then((result) => {
-                getAllFriendRequests();
+
             })
+            getAllFriendRequests();
         }
 
         //console.log(data);
@@ -189,8 +177,9 @@ $(function(){
                 icon: 'success',
                 title: 'Hurray!!! You have a new friend!!'
             }).then((result) => {
-                getAllFriendRequests();
+
             })
+            getAllFriendRequests();
         }
 
         //console.log(data);

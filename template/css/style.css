@@ -177,7 +177,7 @@ button {
 .friendImageCard {
     margin: 10px auto;
 }
-.frndActionBtns {
+.frndActionBtns,.frndaction {
     margin: 5px 10px;
 }
 
@@ -187,4 +187,8 @@ button {
 
 #v-pills-home {
     width: 70% !important;
+}
+
+#notifsBox a{
+    cursor: pointer;
 }

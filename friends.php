@@ -53,12 +53,11 @@ $currDate = "$year-$month-$date";
 
             <div class="dropdown text-end col-md-1">
                 <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="./template/images/default.png" id="profilePic" alt="<?php echo ucfirst($_SESSION['firstname']); ?>" width="32" height="32" class="rounded-circle">
+                    <img src="./template/images/default.png" style="border-radius: 50%;" id="profilePic" alt="<?php echo ucfirst($_SESSION['firstname']); ?>" width="32" height="32" class="rounded-circle">
                     <span> <?php echo ucfirst($_SESSION['firstname']); ?></span>
                 </a>
                 <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-                    <li><a class="dropdown-item" href="#">Friends</a></li>
-                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li><a class="dropdown-item" href="./settings.php">Settings</a></li>
                     <li><a class="dropdown-item" href="#">Profile</a></li>
                     <li><hr class="dropdown-divider"></li>
                     <li><a class="dropdown-item" href="logout.php?logout=true">Log out</a></li>
@@ -101,7 +100,7 @@ $currDate = "$year-$month-$date";
 
             <div class="bg-light border rounded-3 py-1" id="rightSide" style="height: 300px">
                 <div class="w-100">
-                    <h4 class="px-3 py-2 ">Search Friend</h4>
+                    <h4 class="px-3 py-2 ">Find new friends</h4>
                 </div>
                 <form action="search.php" method="get" class="row gx-3 gy-2 align-items-center" validate>
                     <div class="col-sm-9 py-2">

@@ -83,14 +83,23 @@ $(function(){
         let months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
         let count = [];
 
-        for(let i = 1;i<=12;i++){
-            if(parseInt(data[pointer]["month"]) == i){
-                count.push(parseInt(data[pointer]["count"]))
-                pointer++;
-            } else {
+        if(data.length > 0){
+            for(let i = 1;i<=12;i++){
+                if(parseInt(data[pointer]["month"]) == i){
+                    count.push(parseInt(data[pointer]["count"]))
+                    pointer++;
+                } else {
+                    count.push(0);
+                }
+            }
+            getHabitCurrStreak();
+            getHabitMaxStreak();
+        } else {
+            for(let i = 1;i<=12;i++){
                 count.push(0);
             }
         }
+
 
 
         let chartdata = {
@@ -172,8 +181,7 @@ $(function(){
     getScore();
     getHabitChartData();
     getHabitDetails();
-    getHabitCurrStreak();
-    getHabitMaxStreak();
+
 
 
 

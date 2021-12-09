@@ -194,7 +194,7 @@ $(function(){
                         }).then((result) => {
 
                         })
-                        
+
                         getUserInfo();
 
                     } else {

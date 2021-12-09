@@ -227,4 +227,44 @@ class Friend{
             die($e->getMessage());
         }
     }
+
+    public function get_all_friends_score($my_id, $send_data){
+        try{
+            $sql = "SELECT * FROM `friends` WHERE user_one = :my_id OR user_two = :my_id";
+            $stmt = $this->db->prepare($sql);
+            $stmt->bindValue(':my_id',$my_id, PDO::PARAM_INT);
+            $stmt->execute();
+
+            if($send_data){
+
+                $return_data = [];
+                $all_users = $stmt->fetchAll(PDO::FETCH_OBJ);
+
+                foreach($all_users as $row){
+                    if($row->user_one == $my_id){
+                        $get_user = "SELECT COUNT(*) as Score FROM habitlog 
+            WHERE habit_id in (select id from habits where userId=?) and status=1";
+                        $get_user_stmt = $this->db->prepare($get_user);
+                        $get_user_stmt->execute([$row->user_two]);
+                        array_push($return_data, $get_user_stmt->fetch(PDO::FETCH_OBJ));
+                    }else{
+                        $get_user = "SELECT COUNT(*) as Score FROM habitlog 
+            WHERE habit_id in (select id from habits where userId=?) and status=1";
+                        $get_user_stmt = $this->db->prepare($get_user);
+                        $get_user_stmt->execute([$row->user_one]);
+                        array_push($return_data, $get_user_stmt->fetch(PDO::FETCH_OBJ));
+                    }
+                }
+
+                return $return_data;
+
+            }
+            else{
+                return $stmt->rowCount();
+            }
+        }
+        catch (PDOException $e) {
+            die($e->getMessage());
+        }
+    }
 }

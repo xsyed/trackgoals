@@ -56,7 +56,7 @@ $currDate = "$year-$month-$date";
 
             <div class="dropdown text-end col-md-1">
                 <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="./template/images/default.png" id="profilePic" alt="<?php echo ucfirst($_SESSION['firstname']); ?>" width="32" height="32" class="rounded-circle">
+                    <img src="./template/images/default.png" style="border-radius: 50%;" id="profilePic" alt="<?php echo ucfirst($_SESSION['firstname']); ?>" width="32" height="32" class="rounded-circle">
                     <span> <?php echo ucfirst($_SESSION['firstname']); ?></span>
                 </a>
                 <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
@@ -229,7 +229,20 @@ $currDate = "$year-$month-$date";
                 </div>
 
                 <br>
+
+
                 <div class="calendar-container"></div>
+
+                <br>
+
+                <div class="bg-light border rounded-3">
+                    <div class="w-100">
+                        <h5 class="px-3 py-2 ">Friends <i class="bi bi-people-fill"></i></h5>
+                    </div>
+                    <div class="list-group" id="friendsScoreBox">
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>

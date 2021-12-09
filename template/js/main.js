@@ -496,4 +496,48 @@ $(function(){
         }
 
     }
+
+    getAllFriends();
+
+    async function getAllFriends() {
+
+        let userId = document.getElementById("userId").value;
+
+        const response = await fetch('./controller/friends/getAllFriends.php?userId=' + userId);
+
+        const data = await response.json();
+
+
+        if(data.length > 0){
+            let allFriendsScore =  await getAllFriendsScore();
+
+            $("#friendsScoreBox").html("");
+
+
+            for(let i=0;i<data.length;i++){
+                let str = '<div class="list-group-item list-group-item-action d-flex py-3" aria-current="true"><i class="bi bi-person-fill streakIcons rounded-circle flex-shrink-0 bestStreakIcon" ></i>';
+                str += '<div class="d-flex w-100 justify-content-between"><h6 class="mb-0">'+data[i].firstname+'</h6><p class="mb-0 opacity-75" >'+allFriendsScore[i].Score+' pts</p></div></div>';
+
+                $("#friendsScoreBox").append(str);
+            }
+        }else
+        {
+            $("#friendsScoreBox").html("<p>No Friends</p>");
+        }
+
+
+    }
+
+    async function getAllFriendsScore() {
+
+        let userId = document.getElementById("userId").value;
+
+        const response = await fetch('./controller/friends/getAllFriendsScore.php?userId=' + userId);
+
+        const data = await response.json();
+
+        return data;
+
+
+    }
 });

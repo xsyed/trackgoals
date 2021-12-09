@@ -61,17 +61,7 @@ $(function(){
         const response = await fetch('./controller/friends/searchNewFriends.php?searchQuery=' + urlSearchQuery);
 
         const data = await response.json();
-        /*<div class="col-sm-6 text-center" id="singleFriend">
-                                <div class="card">
-                                    <img src="./template/images/default.png" width="100" height="100" alt="..." class="friendImageCard">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Sam</h5>
-                                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                        <a href="#" class="btn btn-primary"><i class="bi bi-person-badge"></i> Profile</a>
-                                        <a href="#" class="btn btn-danger"><i class="bi bi-person-dash"></i> Unfriend</a>
-                                    </div>
-                                </div>
-                            </div>*/
+
 
         $("#newFriendsContent").html("");
 
@@ -79,7 +69,7 @@ $(function(){
         if(data.length > 0){
             for(let i=0;i<data.length;i++){
                 let str = '<div class="col-sm-6 text-center" id="singleFriend"><div class="card">';
-                str += '<img src="./template/images/'+data[i].photo+'" width="100" height="100" alt="Profile Image" class="friendImageCard" />';
+                str += '<img src="./template/profileimages/'+data[i].photo+'" style="border-radius: 50%;" width="100" height="100" alt="Profile Image" class="friendImageCard" />';
                 str += '<div class="card-body"><h5 class="card-title">'+data[i].firstname+'</h5> <a href="#" class="btn btn-success sendFriendRequest" data-frnusid="'+data[i].id+'"><i class="bi bi-person-plus"></i> Send Request</a>';
                 str += '</div></div></div>';
 
