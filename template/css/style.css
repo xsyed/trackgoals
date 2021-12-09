@@ -180,3 +180,11 @@ button {
 .frndActionBtns {
     margin: 5px 10px;
 }
+
+.resetBox{
+    margin: 0 0;
+}
+
+#v-pills-home {
+    width: 70% !important;
+}

@@ -26,8 +26,8 @@ $(function(){
         const response = await fetch('./controller/habits/getScore.php?userId=' + userId);
 
         const data = await response.json();
-        scoreElem.innerHTML = data["Score"];
 
+        scoreElem.innerHTML = data["Score"];
 
     }
 
@@ -142,6 +142,33 @@ $(function(){
 
     }
 
+    async function getUserInfo() {
+
+        let userId = document.getElementById("userId").value;
+
+        const response = await fetch('./controller/settings/getUserInfo.php?userId=' + userId);
+
+        const data = await response.json();
+
+        if(data.length > 0){
+
+            if(data[0].photo == "default.png"){
+                $("#profilePic").attr("src","./template/images/"+data[0].photo);
+            } else {
+                $("#profilePic").attr("src","./template/profileimages/"+data[0].photo);
+            }
+
+        } else {
+            toast.fire({
+                icon: 'error',
+                title: 'Unable to receive user info!'
+            }).then((result) => {
+
+            })
+        }
+
+    }
+    getUserInfo();
     getScore();
     getHabitChartData();
     getHabitDetails();

@@ -53,7 +53,7 @@ $currDate = "$year-$month-$date";
 
             <div class="dropdown text-end col-md-1">
                 <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img src="./template/images/<?php echo ucfirst($_SESSION['photo']); ?>" alt="<?php echo ucfirst($_SESSION['firstname']); ?>" width="32" height="32" class="rounded-circle">
+                    <img src="./template/images/default.png" id="profilePic" alt="<?php echo ucfirst($_SESSION['firstname']); ?>" width="32" height="32" class="rounded-circle">
                     <span> <?php echo ucfirst($_SESSION['firstname']); ?></span>
                 </a>
                 <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
